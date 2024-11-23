@@ -14,6 +14,6 @@ type TextCanvas struct {
 type TextRenderer struct {
 }
 
-func (textRenderer *TextRenderer) Render(canvas *Canvas) {
+func (textRenderer *TextRenderer) Render(canvas Canvas) {
 
 }

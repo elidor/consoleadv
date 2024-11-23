@@ -39,4 +39,11 @@ func ConstructWorld(world *World) {
 		Direction: North,
 		Room:      &Room{},
 	}
+
+	world.Zones = append(world.Zones, &Zone{})
+	world.Zones[0].Rooms = append(world.Zones[0].Rooms, &Room{
+		Short_Description: "A room",
+		Description:       "A really descriptive room",
+		Exits:             []*Exit{exit},
+	})
 }
