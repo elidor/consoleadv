@@ -10,7 +10,7 @@ import (
 func main() {
 	player := &player.Player{Name: "Bob"}
 	player.CreatePlayer()
-	player.SetPassword("asdfjkkasdf")
+	player.SetPassword("asdf")
 
 	jsonText, err := json.Marshal(player)
 
@@ -19,4 +19,10 @@ func main() {
 	}
 
 	fmt.Println(string(jsonText))
+	err = player.ComparePasswordToHash("asddddf")
+	if err != nil {
+		player.BadPasswordAttempts++
+		fmt.Println(err)
+		fmt.Println(player.BadPasswordAttempts)
+	}
 }
